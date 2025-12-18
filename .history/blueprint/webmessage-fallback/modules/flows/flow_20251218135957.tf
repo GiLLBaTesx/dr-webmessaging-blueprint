@@ -10,4 +10,5 @@ resource "genesyscloud_flow" "deploy_archy_flow_chat" {
 
 resource "genesyscloud_flow" "deploy_archy_flow_emergency_bot" {
   filepath = "${path.module}/MyEmergencyChatBot.yaml"
+  file_content_hash = filesha256("${path.module}/MyEmergencyChatBot.yaml") 
 }
